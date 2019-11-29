@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_gened">
+
+    <fragment
+        android:id="@+id/navigation_gened"
+        android:name="com.example.cs125finalproject.ui.gened.GenedFragment"
+        android:label="Gen Eds"
+        tools:layout="@layout/fragment_gened" />
+
+    <fragment
+        android:id="@+id/navigation_similar"
+        android:name="com.example.cs125finalproject.ui.similar.SimilarFragment"
+        android:label="Similar Courses"
+        tools:layout="@layout/fragment_similar" />
+
+</navigation>

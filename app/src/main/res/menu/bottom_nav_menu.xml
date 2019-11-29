@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_gened"
+        android:icon="@drawable/ic_books_stack_of_three"
+        android:title="Gen Eds" />
+
+    <item
+        android:id="@+id/navigation_similar"
+        android:icon="@drawable/ic_twins"
+        android:title="Similar" />
+
+</menu>
