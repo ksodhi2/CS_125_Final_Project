@@ -71,7 +71,7 @@ public class SimilarFragment extends Fragment {
                         contains = true;
                     }
                 }
-                if (contains == false) {
+                if (!contains) {
                     ACTV.setText("");
                 }
                 if (ACTV.getText().toString().equals("")) {
@@ -118,7 +118,7 @@ public class SimilarFragment extends Fragment {
 
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(getActivity(), "There has been an error, try again later", Toast.LENGTH_LONG).show();
                     }
                 });
         // Access the RequestQueue through your singleton class.
