@@ -52,7 +52,7 @@ public class GenedFragment extends Fragment {
                         try {
                             JSONArray result = response.getJSONArray("result");
                             for (int i = 0; i < result.length(); i++) {
-                                classes = classes + result.getJSONObject(i).get("Number").toString()+ " -- " + result.getJSONObject(i).get("Name").toString() + "\n";
+                                classes = classes + result.getJSONObject(i).get("Number").toString() + " -- " + result.getJSONObject(i).get("Name").toString() + "\n"; // also get "GPA" and "Total Students"
                             }
                         } catch (Exception e) {
                             return;

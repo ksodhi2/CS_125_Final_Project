@@ -34,20 +34,15 @@ public class SimilarFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         final View root = inflater.inflate(R.layout.fragment_similar, container, false);
-
-        //Nothing special, create database reference.
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         //Create a new ArrayAdapter with your context and the simple layout for the dropdown menu provided by Android
         final ArrayAdapter<String> autoComplete = new ArrayAdapter<>(getActivity(),android.R.layout.simple_list_item_1);
-        //Child the root before all the push() keys are found and add a ValueEventListener()
         database.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 //Basically, this says "For each DataSnapshot *Data* in dataSnapshot, do what's inside the method.
                 for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()){
-                    //Get the suggestion by childing the key of the string you want to get.
                     String suggestion = suggestionSnapshot.child("Number").getValue(String.class) + " -- " + suggestionSnapshot.child("Name").getValue(String.class);
-                    //Add the retrieved string to the list
                     autoComplete.add(suggestion);
                 }
             }
