@@ -68,22 +68,45 @@ public class SimilarFragment extends Fragment {
                 }
                 if (!contains) {
                     ACTV.setText("");
-                }
-                if (ACTV.getText().toString().equals("")) {
                     Toast.makeText(getActivity(), "Error: Choose Class From List", Toast.LENGTH_LONG).show();
                     TextView api = root.findViewById(R.id.apiResponse);
                     api.setText("");
                     return;
                 }
                 String[] course = ACTV.getText().toString().split("--");
-                connect(course[1].trim(), root);
+                findGPA(course[0].trim(), root);
+                findSimilar(course[1].trim(), root);
             }
         });
-
         return root;
     }
 
-    private void connect(String course, View root) {
+    private void findGPA(final String course, View root) {
+        DatabaseReference database = FirebaseDatabase.getInstance("https://cs-125-final-project-e305b-a0229.firebaseio.com").getReference();
+        final TextView gpa = root.findViewById(R.id.gpaResponse);
+        database.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                boolean found = false;
+                for (DataSnapshot suggestionSnapshot : dataSnapshot.getChildren()) {
+                    if (suggestionSnapshot.child("Number").getValue(String.class).equals(course)) {
+                        gpa.setText("The Average GPA for this course from a dataset of " + suggestionSnapshot.child("Total Students").getValue(String.class)
+                                + " students is " + suggestionSnapshot.child("GPA").getValue(String.class));
+                        found = true;
+                    }
+                }
+                if (!found) {
+                    gpa.setText("The Average GPA for this course is not available");
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+    }
+
+    private void findSimilar(String course, View root) {
         JSONObject param = new JSONObject();
         try {
             param.put("course", course);

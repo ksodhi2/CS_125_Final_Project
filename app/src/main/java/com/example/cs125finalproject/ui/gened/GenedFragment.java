@@ -25,10 +25,11 @@ public class GenedFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_gened, container, false);
-        connect(root);
+        findCourses(root);
         return root;
     }
-    private void connect(View root) {
+
+    private void findCourses(View root) {
         JSONObject param = new JSONObject();
         try {
             param.put("ACP", "ACP"); // ACP for "Advanced Composition"; values ACP or N/A
