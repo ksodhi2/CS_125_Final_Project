@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/navigation_similar"
         android:name="com.example.cs125finalproject.ui.similar.SimilarFragment"
-        android:label="Similar Courses"
+        android:label="Search"
         tools:layout="@layout/fragment_similar" />
 
 </navigation>

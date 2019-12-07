@@ -6,7 +6,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.example.cs125finalproject"
-        minSdkVersion 23
+        minSdkVersion 22
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -43,7 +43,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:19.0.0")
     implementation("com.firebaseui:firebase-ui-auth:4.3.1")
     implementation 'com.google.firebase:firebase-database:17.0.0'
-
+    implementation 'com.google.android.material:material:1.0.0'
 
     testAnnotationProcessor("com.google.auto.service:auto-service:1.0-rc4")
 }

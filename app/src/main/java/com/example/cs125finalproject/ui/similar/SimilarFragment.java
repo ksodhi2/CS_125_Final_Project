@@ -51,6 +51,7 @@ public class SimilarFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) { }
         });
         final AutoCompleteTextView ACTV = root.findViewById(R.id.auto);
+        final TextView gpa = root.findViewById(R.id.gpaResponse);
         ACTV.setAdapter(autoComplete);
 
         Button similar = root.findViewById(R.id.button);
@@ -71,6 +72,7 @@ public class SimilarFragment extends Fragment {
                     Toast.makeText(getActivity(), "Error: Choose Class From List", Toast.LENGTH_LONG).show();
                     TextView api = root.findViewById(R.id.apiResponse);
                     api.setText("");
+                    gpa.setText("");
                     return;
                 }
                 String[] course = ACTV.getText().toString().split("--");
@@ -124,13 +126,13 @@ public class SimilarFragment extends Fragment {
                         String classes = "";
                         try {
                             JSONArray result = response.getJSONArray("result");
-                            for (int i = 0; i < result.length(); i++) {
+                            for (int i = 1; i < result.length(); i++) {
                                 classes = classes + result.getJSONObject(i).get("Number").toString()+ " -- " + result.getJSONObject(i).get("Name").toString() + "\n";
                             }
                         } catch (Exception e) {
                             return;
                         }
-                        api.setText("Similar Courses to " + classes);
+                        api.setText("Other courses that may interest you: " + "\n" + classes);
                     }
                 }, new Response.ErrorListener() {
 

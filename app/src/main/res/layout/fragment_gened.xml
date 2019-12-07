@@ -1,14 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.gened.GenedFragment">
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/genEdText"
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        app:chipSpacingHorizontal="20dp"
+        app:chipSpacingVertical="10dp">
 
-</FrameLayout>
+        <com.google.android.material.chip.Chip
+            android:id="@+id/ACP"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Advanced Composition"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#cc0000" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/western"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Western Culture"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#ebb61a" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/nonwestern"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Non-Western Culture"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#b33c00" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/minority"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="US Minority Culture"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#808080" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/humanities"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Humanities"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#EB2FCB" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/science"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Natural Science &amp; Technology"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#59b300" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/quantitative"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quantitative Reasoning"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#4d79ff" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/social"
+            style="@style/Widget.MaterialComponents.Chip.Filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Social Sciences"
+            android:textColor="@android:color/white"
+            app:chipBackgroundColor="#0099cc" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="10dp"
+        android:paddingBottom="44dp">
+
+        <TextView
+            android:id="@+id/genEdText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingTop="15dp"
+            android:paddingRight="15dp"
+            android:scrollbars="vertical"
+            android:textStyle="bold" />
+    </ScrollView>
+</LinearLayout>

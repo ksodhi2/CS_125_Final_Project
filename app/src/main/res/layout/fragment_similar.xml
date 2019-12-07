@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
-        android:text="Similar Courses" />
+        android:text="Search for Course" />
 
     <TextView
         android:id="@+id/gpaResponse"

@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/navigation_similar"
-        android:icon="@drawable/ic_twins"
-        android:title="Similar" />
+        android:icon="@drawable/ic_search"
+        android:title="Search" />
 
 </menu>
